@@ -1,5 +1,5 @@
-import { AuthController } from './Controllers/AuthController.js';
-import { ValuesController } from './Controllers/ValuesController.js';
+import { AuthController } from './controllers/AuthController.js';
+import { ValuesController } from './controllers/ValuesController.js';
 
 class App {
   authController = new AuthController();

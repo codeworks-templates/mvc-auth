@@ -1,6 +1,6 @@
 import { AppState } from '../AppState.js'
 import { audience, clientId, domain } from '../env.js'
-import { AuthService } from '../Services/AuthService.js'
+import { AuthService } from '../services/AuthService.js'
 import { logger } from '../utils/Logger.js'
 
 function drawUser() {

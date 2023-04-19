@@ -3,10 +3,10 @@ import { isValidProp } from './utils/IsValidProp.js'
 
 class ObservableAppState extends EventEmitter {
   user = null
-  /** @type {import('./Models/Account.js').Account | null} */
+  /** @type {import('./models/Account.js').Account | null} */
   // @ts-ignore
   account = null
-  /** @type {import('./Models/Value').Value[]} */
+  /** @type {import('./models/Value').Value[]} */
   values = []
   socketData = []
 }
