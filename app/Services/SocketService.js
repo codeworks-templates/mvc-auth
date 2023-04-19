@@ -1,4 +1,4 @@
-import { appState } from '../AppState.js'
+import { AppState } from '../AppState.js'
 import { useSockets } from '../env.js'
 import { SocketHandler } from '../utils/SocketHandler.js'
 class SocketService extends SocketHandler {
@@ -11,11 +11,11 @@ class SocketService extends SocketHandler {
   }
 
   onTested(payload) {
-    appState.socketData = [...appState.socketData, payload]
+    AppState.socketData = [...AppState.socketData, payload]
   }
 
   onIsAuthed(payload) {
-    appState.socketData = [...appState.socketData, payload]
+    AppState.socketData = [...AppState.socketData, payload]
   }
 }
 

@@ -1,11 +1,11 @@
-import { appState } from '../AppState.js'
+import { AppState } from '../AppState.js'
 import { audience, clientId, domain } from '../env.js'
 import { AuthService } from '../Services/AuthService.js'
 import { logger } from '../utils/Logger.js'
 
 function drawUser() {
-  const user = appState.user
-  const account = appState.account
+  const user = AppState.user
+  const account = AppState.account
   const userAvatar = avatarTemplate(account)
   const button = authButton(user)
   const template = /* html */ `
@@ -41,7 +41,7 @@ function _drawAuthSettings() {
 }
 export class AuthController {
   constructor() {
-    appState.on('account', drawUser)
+    AppState.on('account', drawUser)
     AuthService.on(AuthService.AUTH_EVENTS.LOADED, drawUser)
     AuthService.on(AuthService.AUTH_EVENTS.LOADED, _drawAuthSettings)
     drawUser()

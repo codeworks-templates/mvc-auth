@@ -1,18 +1,17 @@
-import { dev } from './env.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
 
-class AppState extends EventEmitter {
-  user = {}
-  /** @type {import('./Models/Account.js').Account} */
+class ObservableAppState extends EventEmitter {
+  user = null
+  /** @type {import('./Models/Account.js').Account | null} */
   // @ts-ignore
-  account = {}
+  account = null
   /** @type {import('./Models/Value').Value[]} */
   values = []
   socketData = []
 }
 
-export const appState = new Proxy(new AppState(), {
+export const AppState = new Proxy(new ObservableAppState(), {
   get(target, prop) {
     isValidProp(target, prop)
     return target[prop]
@@ -24,8 +23,3 @@ export const appState = new Proxy(new AppState(), {
     return true
   }
 })
-
-if (dev) {
-  // @ts-ignore
-  window.appState = appState
-}

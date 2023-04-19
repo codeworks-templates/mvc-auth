@@ -1,4 +1,4 @@
-import { appState } from '../AppState.js'
+import { AppState } from '../AppState.js'
 import { audience, clientId, domain } from '../env.js'
 import { accountService } from './AccountService.js'
 import { server } from './AxiosService.js'
@@ -23,7 +23,7 @@ export const AuthService = Auth0Provider.initialize({
 AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, async () => {
   server.defaults.headers.authorization = AuthService.bearer
   server.interceptors.request.use(refreshAuthToken)
-  appState.user = AuthService.user
+  AppState.user = AuthService.user
   await accountService.getAccount()
   socketService.authenticate(AuthService.bearer)
 })

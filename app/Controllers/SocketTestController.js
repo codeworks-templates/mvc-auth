@@ -1,14 +1,14 @@
-import { appState } from '../AppState.js'
+import { AppState } from '../AppState.js'
 import { socketService } from '../Services/SocketService.js'
 import { logger } from '../utils/Logger.js'
 
 function _drawSocketData() {
-  logger.log('draw socket data', appState.socketData)
+  logger.log('draw socket data', AppState.socketData)
 }
 
 export class SocketTestController {
   constructor() {
-    appState.on('socketData', _drawSocketData)
+    AppState.on('socketData', _drawSocketData)
   }
 
   testSocket() {
