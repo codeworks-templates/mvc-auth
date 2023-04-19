@@ -1,5 +1,5 @@
 import { appState } from '../AppState.js'
-import { valuesService } from '../Services/ValuesService.js'
+import { valuesService } from '../services/ValuesService.js'
 import { logger } from '../utils/Logger.js'
 
 // Private

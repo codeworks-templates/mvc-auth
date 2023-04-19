@@ -1,5 +1,5 @@
 import { AppState } from '../AppState.js'
-import { socketService } from '../Services/SocketService.js'
+import { socketService } from '../services/SocketService.js'
 import { logger } from '../utils/Logger.js'
 
 function _drawSocketData() {
