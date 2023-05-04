@@ -66,7 +66,7 @@ export class AuthController {
 
 function authButton(user) {
   if (AuthService.loading) { return '' }
-  return user.isAuthenticated
+  return user && user.isAuthenticated
     ? /* html */ `
     <button class="btn btn-small btn-dark text-muted selectable" onclick="app.authController.logout()"><i class="mdi mdi-logout f-16 text-white"></i></button>
   `
@@ -76,7 +76,7 @@ function authButton(user) {
 }
 
 function avatarTemplate(account) {
-  return account.picture
+  return account
     ? /* html */ `
     <div class="mr-2">
       <img class="rounded-circle" src="${account.picture}" alt="${account.name}" height="45"/>
