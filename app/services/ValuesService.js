@@ -1,5 +1,5 @@
 import { AppState } from '../AppState.js'
-import { Value } from '../models/Value.js'
+import { Value } from '../temp/Value.js'
 
 class ValuesService {
   addValue() {

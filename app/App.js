@@ -1,5 +1,5 @@
 import { AppState } from './AppState.js';
-import { AuthController } from './controllers/AuthController.js';
+import { AuthController } from './controllersss/AuthController.js';
 import { router } from './router.js';
 
 class App {
