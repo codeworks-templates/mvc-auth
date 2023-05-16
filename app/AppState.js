@@ -2,6 +2,7 @@ import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
 
 class ObservableAppState extends EventEmitter {
+  page = ''
   user = null
   /** @type {import('./models/Account.js').Account | null} */
   // @ts-ignore
@@ -9,6 +10,11 @@ class ObservableAppState extends EventEmitter {
   /** @type {import('./models/Value').Value[]} */
   values = []
   socketData = []
+
+  // Used to load initial data
+  init() {
+
+  }
 }
 
 export const AppState = new Proxy(new ObservableAppState(), {

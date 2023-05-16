@@ -29,33 +29,45 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <!-- NAVLINKS -->
+          <a href="#/about" class="nav-link">About</a>
         </div>
       </div>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
   </header>
-  <main id="app">
-    <div class="container-fluid">
-      <div class="row my-3">
-        <div class="col-lg-5" id="auth-settings">
-          <div class="card p-2 skeleton-loader">
-            <div class="card-title p-2">
-              <div class="d-flex align-items-center">
-                <div class="skeleton-loader avatar"></div>
-                <div class="skeleton-loader text mx-2"></div>
+
+  <main>
+
+    <section id="auth-template">
+      <!-- TODO REMOVE THE AUTH TEMPLATE ONCE YOU VERIFY YOUR AUTH SETTINGS -->
+      <div class="container-fluid">
+        <div class="row my-3">
+          <div class="col-lg-5" id="auth-settings">
+            <div class="card p-2 skeleton-loader">
+              <div class="card-title p-2">
+                <div class="d-flex align-items-center">
+                  <div class="skeleton-loader avatar"></div>
+                  <div class="skeleton-loader text mx-2"></div>
+                </div>
               </div>
-            </div>
-            <div class="card-body border-top">
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
+              <div class="card-body border-top">
+                <div class="skeleton-loader text block"></div>
+                <div class="skeleton-loader text block"></div>
+                <div class="skeleton-loader text block"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section id="app">
+      <!-- primary viewport -->
+    </section>
+
 
   </main>
+
   <footer class="container-fluid bg-dark text-light">
     <div class="row text-center">
       <div class="col">
