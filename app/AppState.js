@@ -7,7 +7,7 @@ class ObservableAppState extends EventEmitter {
   /** @type {import('./models/Account.js').Account | null} */
   // @ts-ignore
   account = null
-  /** @type {import('./models/Value').Value[]} */
+  /** @type {import('./models/Value.js').Value[]} */
   values = []
   socketData = []
 
