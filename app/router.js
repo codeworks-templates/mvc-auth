@@ -1,5 +1,5 @@
-import { AboutController } from "./controllersss/AboutController.js";
-import { HomeController } from "./controllersss/HomeController.js";
+import { AboutController } from "./controllers/AboutController.js";
+import { HomeController } from "./controllers/HomeController.js";
 
 export const router = [
   {
