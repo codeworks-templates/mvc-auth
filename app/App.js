@@ -19,6 +19,11 @@ class App {
     if (!currentRoute) {
       throw new Error('404 No Matching Route Found')
     }
+    if (Array.isArray(currentRoute.controller)) {
+      return currentRoute.controller.forEach(c => {
+        this[c.name] = new c()
+      })
+    }
     this[currentRoute.controller.name] = new currentRoute.controller()
   }
 
