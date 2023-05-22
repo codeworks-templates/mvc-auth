@@ -32,6 +32,7 @@ class App {
       })
     }
     if (currentRoute.controller) {
+      // @ts-ignore
       this[currentRoute.controller.name] = new currentRoute.controller()
     }
   }
