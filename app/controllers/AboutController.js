@@ -1,14 +1,9 @@
-import { setHTML } from '../utils/Writer.js'
-
-// Private
-function _draw() {
-  setHTML('app', '<h1>This is the About Page</h1>')
-}
 
 // Public
 export class AboutController {
   constructor() {
-    _draw()
+    console.log('The About Page has loaded')
   }
+
 
 }
