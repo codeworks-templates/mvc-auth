@@ -3,7 +3,6 @@ import { audience, clientId, domain } from '../env.js'
 import { accountService } from './AccountService.js'
 import { api } from './AxiosService.js'
 
-
 // @ts-ignore
 // eslint-disable-next-line no-undef
 export const AuthService = Auth0Provider.initialize({
@@ -19,6 +18,13 @@ export const AuthService = Auth0Provider.initialize({
     )
   }
 })
+
+export function AuthGuard(next) {
+  if (!AuthService || AuthService.loading) {
+    return setTimeout(() => AuthGuard(next), 750)
+  }
+  return AuthService.isAuthenticated ? next() : AuthService.loginWithRedirect()
+}
 
 AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, async () => {
   api.defaults.headers.authorization = AuthService.bearer
