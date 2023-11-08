@@ -5,7 +5,6 @@ import { logger } from '../utils/Logger.js'
 
 const SHOW_SETTINGS = false
 
-
 function drawUser() {
   const user = AppState.user
   const account = AppState.account
@@ -31,7 +30,7 @@ function _drawAuthSettings() {
 }
 export class AuthController {
   constructor() {
-    AppState.on('account', drawUser)
+    AppState.on(AppState.account, drawUser)
     AuthService.on(AuthService.AUTH_EVENTS.LOADED, drawUser)
     AuthService.on(AuthService.AUTH_EVENTS.LOADED, _drawAuthSettings)
     drawUser()

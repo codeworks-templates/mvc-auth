@@ -8,7 +8,7 @@ function _drawAccount() {
 
 export class AccountController {
   constructor() {
-    AppState.on('account', _drawAccount)
+    AppState.on(AppState.account, _drawAccount)
     _drawAccount()
   }
 

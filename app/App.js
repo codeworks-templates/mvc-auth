@@ -1,4 +1,3 @@
-import { AppState } from './AppState.js';
 import { AuthController } from './controllers/AuthController.js';
 import { router } from './router-config.js';
 
@@ -11,6 +10,5 @@ class App {
 
 
 const app = new App()
-AppState.init()
 // @ts-ignore
 window.app = app

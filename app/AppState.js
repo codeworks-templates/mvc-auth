@@ -1,27 +1,11 @@
 import { EventEmitter } from './utils/EventEmitter.js'
-import { isValidProp } from './utils/IsValidProp.js'
+import { createObservableProxy } from './utils/ObservableProxy.js'
 
 class ObservableAppState extends EventEmitter {
+
   user = null
-  /** @type {import('./models/Account.js').Account | null} */
-  // @ts-ignore
+  /**@type {import('./models/Account.js').Account | null} */
   account = null
-
-  // Used to load initial data
-  init() {
-
-  }
 }
 
-export const AppState = new Proxy(new ObservableAppState(), {
-  get(target, prop) {
-    isValidProp(target, prop)
-    return target[prop]
-  },
-  set(target, prop, value) {
-    isValidProp(target, prop)
-    target[prop] = value
-    target.emit(prop, value)
-    return true
-  }
-})
+export const AppState = createObservableProxy(new ObservableAppState())
