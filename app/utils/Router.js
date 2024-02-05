@@ -26,8 +26,8 @@ class Route {
   }
 
   async loadTemplate() {
-    if (!this.view.endsWith('.html') || this.template.startsWith('<')) {
-      return
+    if (!this.view || !this.view.endsWith('.html') || this.template.startsWith('<')) {
+      return ''
     }
     try {
       const res = await fetch(this.view)
