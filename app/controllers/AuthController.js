@@ -88,7 +88,7 @@ function authSettingsTemplate() {
     <div class="card-title p-1 mb-0">
       <div class="d-flex align-items-center">
         <div class="avatar">
-          <img src="https://avatars.githubusercontent.com/u/2824157?s=280&v=4" alt="user" height="45" class="rounded-circle">
+          <img src="https://avatars.githubusercontent.com/u/2824157?s=280&v=4" alt="user" height="45" class="rounded-circle profile-picture profile-picture-sm">
         </div>
         <div class="text mx-2">
           <b>Auth0 Settings</b>
