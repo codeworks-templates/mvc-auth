@@ -1,5 +1,6 @@
 import { AuthController } from './controllers/AuthController.js';
 import { router } from './router-config.js';
+const USE_ROUTER = false
 
 class App {
 
