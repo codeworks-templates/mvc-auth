@@ -4,15 +4,16 @@ import { router } from './router-config.js';
 class App {
 
   AuthController = new AuthController()
-  router = router
-  init() {
-    this.router.init(app)
+  
+  constructor() {
+    if(USE_ROUTER){
+      router = router
+      this.router.init(app)
+    }
   }
-
 }
 
 
 const app = new App()
-app.init()
 // @ts-ignore
 window.app = app
