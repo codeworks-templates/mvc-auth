@@ -8,8 +8,8 @@ class App {
   
   constructor() {
     if(USE_ROUTER){
-      router = router
-      this.router.init(app)
+      this.router = router
+      this.router.init(this)
     }
   }
 }
